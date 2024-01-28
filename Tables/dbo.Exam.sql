@@ -4,7 +4,11 @@ CREATE TABLE [dbo].[Exam]
 [Student_ID] [int] NOT NULL,
 [Grade] [int] NULL,
 [Course_ID] [int] NOT NULL,
-[Duration] [int] NOT NULL
+[Duration] [int] NOT NULL,
+[NumsOfMCQ] [int] NULL,
+[NumsOfTF] [int] NULL,
+[Date] [date] NULL,
+[Time] [time] (0) NULL
 ) ON [PRIMARY]
 GO
 ALTER TABLE [dbo].[Exam] ADD CONSTRAINT [PK_Exam] PRIMARY KEY CLUSTERED ([Exam_ID]) ON [PRIMARY]

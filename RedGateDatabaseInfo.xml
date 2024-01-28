@@ -65,17 +65,17 @@
   </WriteToFileOptions>
   <DataFileSet>
     <Count>12</Count>
-    <DataFile>dbo.Student_Answer_Data.sql</DataFile>
-    <DataFile>dbo.Exam_Question_Data.sql</DataFile>
-    <DataFile>dbo.Student_Course_Data.sql</DataFile>
-    <DataFile>dbo.Instructor_Courses_Data.sql</DataFile>
-    <DataFile>dbo.Exam_Data.sql</DataFile>
     <DataFile>dbo.Choices_Data.sql</DataFile>
-    <DataFile>dbo.Topic_Data.sql</DataFile>
-    <DataFile>dbo.Student_Data.sql</DataFile>
-    <DataFile>dbo.Question_Data.sql</DataFile>
-    <DataFile>dbo.Instructor_Data.sql</DataFile>
-    <DataFile>dbo.Department_Data.sql</DataFile>
     <DataFile>dbo.Course_Data.sql</DataFile>
+    <DataFile>dbo.Department_Data.sql</DataFile>
+    <DataFile>dbo.Exam_Data.sql</DataFile>
+    <DataFile>dbo.Exam_Question_Data.sql</DataFile>
+    <DataFile>dbo.Instructor_Courses_Data.sql</DataFile>
+    <DataFile>dbo.Instructor_Data.sql</DataFile>
+    <DataFile>dbo.Question_Data.sql</DataFile>
+    <DataFile>dbo.Student_Answer_Data.sql</DataFile>
+    <DataFile>dbo.Student_Course_Data.sql</DataFile>
+    <DataFile>dbo.Student_Data.sql</DataFile>
+    <DataFile>dbo.Topic_Data.sql</DataFile>
   </DataFileSet>
 </DatabaseInformation>

@@ -7,10 +7,10 @@ CREATE PROCEDURE [dbo].[InsertQuestion]
     @QuestionText VARCHAR(200),
     @ModelAnswer VARCHAR(200),
     @CourseID INT,
-    @Choice1 VARCHAR(50),
-    @Choice2 VARCHAR(50),
-    @Choice3 VARCHAR(50),
-    @Choice4 VARCHAR(50)
+    @Choice1 VARCHAR(200),
+    @Choice2 VARCHAR(200),
+    @Choice3 VARCHAR(200),
+    @Choice4 VARCHAR(200)
 AS
 BEGIN
     -- Insert into Question table

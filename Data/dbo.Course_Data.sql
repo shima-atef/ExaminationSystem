@@ -1,1 +1,5 @@
 INSERT INTO [dbo].[Course] ([Course_ID], [Crs_Name]) VALUES (1, 'C#')
+INSERT INTO [dbo].[Course] ([Course_ID], [Crs_Name]) VALUES (2, 'SQL')
+INSERT INTO [dbo].[Course] ([Course_ID], [Crs_Name]) VALUES (3, 'OOP')
+INSERT INTO [dbo].[Course] ([Course_ID], [Crs_Name]) VALUES (4, 'DataStructure')
+INSERT INTO [dbo].[Course] ([Course_ID], [Crs_Name]) VALUES (5, 'JavaScript')

@@ -1,6 +1,6 @@
 CREATE TABLE [dbo].[Question]
 (
-[Question_ID] [int] NOT NULL IDENTITY(1, 1),
+[Question_ID] [int] NOT NULL IDENTITY(11, 1),
 [Type] [varchar] (3) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
 [Question] [varchar] (200) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
 [Model_Answer] [varchar] (200) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
