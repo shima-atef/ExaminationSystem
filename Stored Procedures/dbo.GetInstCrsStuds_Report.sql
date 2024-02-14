@@ -2,7 +2,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_NULLS ON
 GO
-Create PROCEDURE [dbo].[GetInstCrsStuds]
+Create PROCEDURE [dbo].[GetInstCrsStuds_Report]
 	@InstID INT
 AS
 BEGIN

@@ -2,13 +2,10 @@ SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_NULLS ON
 GO
-
-CREATE PROCEDURE [dbo].[GetStudentGrades] @StudentID INT
+create PROCEDURE [dbo].[GetStudentGradesReport] @StudentID INT
 AS
 BEGIN
-    SELECT
-        Course.Crs_Name,
-        Exam.Grade
+    SELECT Course.Crs_Name,Exam.Grade
     FROM
         Course
     INNER JOIN
@@ -19,4 +16,5 @@ BEGIN
         Exam.Grade IS NOT NULL
         AND Student.Student_ID = @StudentID;
 END;
+
 GO

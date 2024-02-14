@@ -1,0 +1,16 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+CREATE PROCEDURE [dbo].[Delete_Student]
+	@StudID INT
+AS
+BEGIN
+	IF EXISTS (SELECT Student_ID FROM Student WHERE Student_ID = @StudID)
+		BEGIN
+			DELETE FROM Student WHERE Student_ID = @StudID
+		END
+	ELSE SELECT 'No Student Found!';
+END
+GO

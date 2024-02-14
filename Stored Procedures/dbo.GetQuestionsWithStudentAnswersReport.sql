@@ -2,7 +2,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_NULLS ON
 GO
-create proc [dbo].[GetQuestionsWithStudentAnswers] @QuID int, @ExamID int
+create proc [dbo].[GetQuestionsWithStudentAnswersReport] @QuID int, @ExamID int
 as
 select Question.Question as TheQuestions , Student_Answer.Student_Answer as StudentAnswers
 from Exam_Question , Student_Answer ,Question

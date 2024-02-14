@@ -2,34 +2,42 @@ SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_NULLS ON
 GO
-CREATE PROCEDURE [dbo].[ExamGeneration]
-	@StudID INT, 
-	@CrsID INT, 
-	@Dur INT, 
-	@numTF INT, 
-	@numMCQ INT
-AS
-BEGIN
-	--Make an Exam and insert it into the table
-	INSERT INTO Exam(Student_ID, Grade, Course_ID, Duration)
-	VALUES (@StudID, NULL, @CrsID, @Dur);
+ CREATE   Proc [dbo].[ExamGeneration] @courseName varchar(30),@TFcount int,@MCQcount int
+  as
+  begin
+  if(@TFcount+@MCQcount!=10)
+  select 'Exam must have 10 Question' 
+  else
+  begin
+  declare @ExamQuestion table(QuestionID int)
+  declare @CourseID int =(SELECT Course_ID FROM Course WHERE Crs_Name = @courseName) ;
 
-	--Get the ID of the inserted Exam
-	DECLARE @examID INT;
-	SET @examID = @@IDENTITY;
+  ---insert T/F Question
+    INSERT INTO @ExamQuestion (QuestionID)
 
-	--Get the randomized TF questions and insert them
-	INSERT INTO Exam_Question(Exam_ID, Question_ID)
-	SELECT TOP(@numTF) @examID as Exam_ID, Question_ID
-	FROM Question
-	WHERE [Type] = 'TF'
-	ORDER BY NEWID();
+    SELECT TOP (@TFcount) Question_ID
 
-	--Get the randomized MCQ questions and insert them
-	INSERT INTO Exam_Question(Exam_ID, Question_ID)
-	SELECT TOP(@numMCQ) @examID as Exam_ID, Question_ID
-	FROM Question
-	WHERE [Type] = 'MCQ'
-	ORDER BY NEWID();
-END
+    FROM Question
+    WHERE Type = 'TF' AND Course_ID = @CourseID
+    ORDER BY NEWID(); 
+
+	-- Insert  MCQ Questions
+    INSERT INTO @ExamQuestion (QuestionID)
+    SELECT TOP (@MCQcount) Question_ID
+    FROM Question
+    WHERE Type = 'MCQ' AND Course_ID = @CourseID
+    ORDER BY NEWID();
+
+	declare @examID int;
+
+    insert into Exam (Student_ID, Course_ID, Duration)
+    values (5, @CourseID, 60); 
+
+    set @examID = @@IDENTITY; -- Get the Exam_ID of the newly inserted row
+
+    insert into Exam_Question (Exam_ID, Question_ID)
+    select @examID, QuestionID from @examQuestion;
+
+  end
+  end
 GO

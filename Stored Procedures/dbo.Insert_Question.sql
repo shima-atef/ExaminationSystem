@@ -2,7 +2,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_NULLS ON
 GO
-CREATE PROCEDURE [dbo].[InsertQuestion]
+CREATE PROCEDURE [dbo].[Insert_Question]
     @Type VARCHAR(3),
     @QuestionText VARCHAR(200),
     @ModelAnswer VARCHAR(200),

@@ -2,7 +2,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_NULLS ON
 GO
-CREATE PROCEDURE [dbo].[UpdateDepartment]
+CREATE PROCEDURE [dbo].[Update_Department]
     @DeptID INT,
     @NewDeptName VARCHAR(200)
 AS

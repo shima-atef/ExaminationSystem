@@ -2,7 +2,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_NULLS ON
 GO
-create proc [dbo].[selectDepartment] @id int =-1 , @name nvarchar(50)=' '
+create proc [dbo].[Select_Department] @id int =-1 , @name nvarchar(50)=' '
 as
 if @id=-1 and @name!=' '
 begin

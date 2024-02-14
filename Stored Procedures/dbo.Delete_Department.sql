@@ -2,7 +2,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_NULLS ON
 GO
-CREATE PROCEDURE [dbo].[DeleteDepartment] 
+CREATE PROCEDURE [dbo].[Delete_Department] 
     @id INT
 AS
 BEGIN
