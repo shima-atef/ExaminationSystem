@@ -3,7 +3,7 @@ GO
 SET ANSI_NULLS ON
 GO
 
- create    proc [dbo].[DataDictionary1]
+ CREATE    proc [dbo].[DataDictionary1]
     @tableName VARCHAR(128) as
 	begin
 SELECT
@@ -32,7 +32,7 @@ LEFT JOIN sys.tables AS ref_tables
     ON fk.referenced_object_id = ref_tables.object_id
 LEFT JOIN sys.extended_properties AS ep
     ON tables.object_id = ep.major_id AND ep.minor_id = 0 AND ep.class = 1
-WHERE tables.name= @tableName
+WHERE tables.name= @tableName and   indexes.name  is not NULL
 
 
 

@@ -9,12 +9,11 @@ AS
 BEGIN
     BEGIN TRY
         SELECT *
-        FROM Exam
-        WHERE Course_ID = @Course_ID;
+        FROM Exam ,Exam_Structure
+        WHERE Exam_Structure.Course_ID = @Course_ID and Exam.Structure_ID = Exam_Structure.Structure_ID;
     END TRY
     BEGIN CATCH
         PRINT 'Error occurred while selecting exams by course.';
     END CATCH
 END;
-
 GO

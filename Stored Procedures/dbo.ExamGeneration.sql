@@ -12,10 +12,10 @@ BEGIN
 
 
    
-     SELECT @CourseID = Course_ID FROM Exam WHERE Exam_ID = @ExamID;
-	 SELECT @TFcount = Exam.NumsOfTF FROM Exam WHERE Exam_ID = @ExamID;
-	 SELECT @MCQcount = Exam.NumsOfMCQ FROM Exam WHERE Exam_ID = @ExamID;
-
+     SELECT @CourseID = Exam_Structure.Course_ID FROM Exam , Exam_Structure WHERE Exam_ID = @ExamID and Exam.Structure_ID = Exam_Structure.Structure_ID;
+	 SELECT @TFcount = Exam_Structure.TF_Count FROM Exam , Exam_Structure WHERE Exam_ID = @ExamID and Exam.Structure_ID = Exam_Structure.Structure_ID;
+	 SELECT @MCQcount = Exam_Structure.MCQ_Count from  Exam , Exam_Structure WHERE Exam_ID = @ExamID and Exam.Structure_ID = Exam_Structure.Structure_ID;
+	
     IF (@CourseID IS NULL)
     BEGIN
         SELECT 'Invalid Exam ID';
